@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import Editor from 'react-simple-code-editor';
 // import { highlight, languages } from 'prismjs/components/prism-core';
 // import 'prismjs/components/prism-clike';
@@ -6,21 +6,18 @@ import React, { useState } from 'react';
 // import 'prismjs/components/prism-markup';
 // import './styles.css'
 import AceEditor from "react-ace";
- 
+
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-javascript";
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/ext-language_tools"
-import { Input, Dropdown, Menu, Button, Divider } from 'antd';
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import "ace-builds/src-noconflict/theme-tomorrow";
+import "ace-builds/src-noconflict/ext-language_tools";
+import { Input, Dropdown, Menu, Button, Divider } from "antd";
+import { DownOutlined, UserOutlined } from "@ant-design/icons";
 
 // require('prismjs/components/prism-jsx');
 
-
-
 export default function ConfigurationTab() {
-
     const initialCode = `function add(a, b) {
         return a + b;
       }
@@ -29,23 +26,20 @@ export default function ConfigurationTab() {
     const [selectedLanguage, changeLanguage] = useState("Java");
     const codeLanguages = ["javascript", "java", "python"];
 
-    const handleLanguageChange = (e) => {
+    const handleLanguageChange = (e: any) => {
         changeLanguage(e.key);
-
-    }
+    };
     const menu = (
         <Menu onClick={handleLanguageChange}>
-            {
-                codeLanguages.map(language => {
-                    return (
-                        <Menu.Item key={language} icon={<UserOutlined />}>
-                            {language}
-                        </Menu.Item>
-                    )
-                })
-            }
+            {codeLanguages.map((language) => {
+                return (
+                    <Menu.Item key={language} icon={<UserOutlined />}>
+                        {language}
+                    </Menu.Item>
+                );
+            })}
         </Menu>
-      );
+    );
 
     return (
         <div>
@@ -67,7 +61,7 @@ export default function ConfigurationTab() {
                 }} */}
             <AceEditor
                 mode={selectedLanguage}
-                theme="github"
+                theme="tomorrow"
                 onChange={setCode}
                 name="codeEditor"
                 value={code}
@@ -75,8 +69,8 @@ export default function ConfigurationTab() {
                 setOptions={{
                     enableBasicAutocompletion: true,
                     enableLiveAutocompletion: true,
-                    enableSnippets: true
-                  }}
+                    enableSnippets: true,
+                }}
             />
             <Divider />
             <div>
@@ -85,5 +79,4 @@ export default function ConfigurationTab() {
             </div>
         </div>
     );
-
 }
