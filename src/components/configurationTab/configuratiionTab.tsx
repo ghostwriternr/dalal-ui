@@ -1,10 +1,4 @@
 import React, { useState } from "react";
-// import Editor from 'react-simple-code-editor';
-// import { highlight, languages } from 'prismjs/components/prism-core';
-// import 'prismjs/components/prism-clike';
-// import 'prismjs/components/prism-javascript';
-// import 'prismjs/components/prism-markup';
-// import './styles.css'
 import AceEditor from "react-ace";
 
 import "ace-builds/src-noconflict/mode-java";
@@ -14,14 +8,10 @@ import "ace-builds/src-noconflict/theme-tomorrow";
 import "ace-builds/src-noconflict/ext-language_tools";
 import { Input, Dropdown, Menu, Button, Divider } from "antd";
 import { DownOutlined, UserOutlined } from "@ant-design/icons";
-
-// require('prismjs/components/prism-jsx');
+import { CodeContainer, LanguageContainer, EditorContainer, ChannelContainer, TargetContainer, TargetUrlContainer } from "./configurationTab.styles";
 
 export default function ConfigurationTab() {
-    const initialCode = `function add(a, b) {
-        return a + b;
-      }
-      `;
+    const initialCode = `function add(a, b) {\n\treturn a + b;\n}`;
     const [code, setCode] = useState(initialCode);
     const [selectedLanguage, changeLanguage] = useState("Java");
     const codeLanguages = ["javascript", "java", "python"];
@@ -42,41 +32,37 @@ export default function ConfigurationTab() {
     );
 
     return (
-        <div>
-            <Dropdown overlay={menu}>
-                <Button>
-                    {selectedLanguage} <DownOutlined />
-                </Button>
-            </Dropdown>
-            {/* <Editor
-                placeholder="Type some code"
-                value={code}
-                onValueChange={newCode => setCode(newCode)}
-                highlight={code => highlight(code, languages.jsx)}
-                padding={10}
-                style={{
-                    fontFamily: '"Fira code", "Fira Mono", monospace',
-                    fontSize: 12,
-                    height: "50vh"
-                }} */}
-            <AceEditor
-                mode={selectedLanguage}
-                theme="tomorrow"
-                onChange={setCode}
-                name="codeEditor"
-                value={code}
-                editorProps={{ $blockScrolling: true }}
-                setOptions={{
-                    enableBasicAutocompletion: true,
-                    enableLiveAutocompletion: true,
-                    enableSnippets: true,
-                }}
-            />
+        <ChannelContainer>
+            <CodeContainer>
+                <LanguageContainer>
+                    <Dropdown overlay={menu}>
+                        <Button>
+                            {selectedLanguage} <DownOutlined />
+                        </Button>
+                    </Dropdown>
+                </LanguageContainer>
+                <EditorContainer>
+                    <AceEditor
+                        mode={selectedLanguage}
+                        theme="tomorrow"
+                        onChange={setCode}
+                        name="codeEditor"
+                        value={code}
+                        editorProps={{ $blockScrolling: true }}
+                        setOptions={{
+                            enableBasicAutocompletion: true,
+                            enableLiveAutocompletion: true,
+                            enableSnippets: true,
+                        }}
+                    />
+                </EditorContainer>
+                
+            </CodeContainer>
             <Divider />
-            <div>
-                <p>Target URL</p>
+            <TargetContainer>
+                <TargetUrlContainer>Target URL</TargetUrlContainer>
                 <Input placeholder="Target URL" />
-            </div>
-        </div>
+            </TargetContainer>
+        </ChannelContainer>
     );
 }
