@@ -10,7 +10,7 @@ function App() {
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={HomePage} />
-                    <Route path="/:id" component={ChannelPage} />
+                    <Route path="/:uuid" component={ChannelPage} />
                 </Switch>
             </Router>
         </div>
