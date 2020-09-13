@@ -1,5 +1,6 @@
 # Dalal UI
 ### Connect your service in few lines of code
+[Access it here](https://master.d2r6jsqlksznst.amplifyapp.com/)
 
 This project is the UI interaction for Dalal
 
@@ -34,6 +35,12 @@ On the statistics page currently you will the events which were sent in an hour 
 - Docker
 - Sidekiq
 - Postgres (Database)
+
+## Local Setup
+- clone this repo
+- cd dalal
+- yarn install
+- yarn start
 
 
 
