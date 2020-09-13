@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Button } from "antd";
 import history from "../../helpers/history";
 import { createChannel } from '../../service/DalalService';
-import { HomePageContainer, DalalContainer, CreateChannelContainer, RowContainier } from "./HomePage.styles";
+import { HomePageContainer, CreateChannelContainer, RowContainier, DalalContainer } from "./HomePage.styles";
 import { LoadingOutlined } from '@ant-design/icons';
 import { sendNotification } from "../../helpers/utils";
+import { GithubFilled } from "@ant-design/icons";
 
 export const HomePage = () => {
 
@@ -41,6 +42,7 @@ export const HomePage = () => {
                         </Button>
                     }
                 </CreateChannelContainer>
+                <GithubFilled style={{ fontSize: "40px", marginTop: "10px" }} onClick={() => window.open("https://github.com/ghostwriternr/dalal")} />
             </RowContainier>
         </HomePageContainer>
     );

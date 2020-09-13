@@ -5,9 +5,9 @@ export const ChannelPageContainer = styled.div`
 `;
 
 export const ChannelHeaderContainer = styled.div`
-    text-align: left;
     background: #E8684A;
-    display: flex;
+    color: white;
+    width: 100%;
 `;
 
 export const DalalHeaderContainer = styled.div`
@@ -37,4 +37,12 @@ export const ByolHoverContainer = styled.span`
         background-color: palevioletred;
         color: white;
     }
+`;
+
+export const ChannelFooterContainer = styled.div`
+    position: fixed;
+    bottom: 0;
+    background: #E8684A;
+    width: 100%;
+    color: white;
 `;

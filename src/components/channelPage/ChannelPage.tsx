@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Input, Tabs, Button } from "antd";
 import ConfigurationTab from "../configurationTab/configuratiionTab";
-import { ChannelPageContainer, WebhookUrlContainer, ChannelHeaderContainer, ChannelContentContainer, DalalHeaderContainer, DalalTaglineContainer } from "./ChannelPage.styles";
+import { ChannelPageContainer, WebhookUrlContainer, ChannelHeaderContainer, ChannelContentContainer, DalalHeaderContainer, DalalTaglineContainer, ChannelFooterContainer } from "./ChannelPage.styles";
 import { CopyOutlined } from "@ant-design/icons";
 import copy from 'copy-to-clipboard';
 import HistoryTab from "../historyTab/historyTab";
@@ -49,6 +49,9 @@ export const ChannelPage = () => {
                     </Tabs>
                 </div>
             </ChannelContentContainer>
+            <ChannelFooterContainer>
+                * BYOL - Bring Your Own Language
+            </ChannelFooterContainer>
         </ChannelPageContainer>
     );
 };
