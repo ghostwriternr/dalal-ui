@@ -3,5 +3,5 @@
 
 This project is the UI interaction for Dalal
 
-![alt] [./logo.png]
+![alt text] [src/assets/logo.png "Logo"]
 
