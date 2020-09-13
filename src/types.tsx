@@ -15,3 +15,10 @@ export interface NotificationType {
     duration?: number;
     placement?: "topRight" | "topLeft" | "bottomLeft" | "bottomRight";
 }
+
+export type StatsResponse = { [key: string]: string };
+
+export interface StatType {
+    count: number;
+    time: string;
+}

@@ -119,7 +119,7 @@ export default function ConfigurationTab({ uuid }: { uuid: string }) {
             <CodeContainer>
                 <LanguageContainer>
                     <Dropdown overlay={menu}>
-                        <Button>
+                        <Button style={{ fontWeight: "bold" }}>
                             {selectedLanguage} <DownOutlined />
                         </Button>
                     </Dropdown>

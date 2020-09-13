@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import { ChannelResponse } from '../components/configurationTab/configuratiionTab';
-import { HistoryResponse } from '../types';
+import { HistoryResponse, StatsResponse } from '../types';
 export const API_URL = "https://0c2cf70abe34.ngrok.io";
 
 export const createChannel = () => {
@@ -34,4 +34,9 @@ export const getTemplates = () => {
 
 export const getChannelHistory = (uuid: String): Promise<AxiosResponse<HistoryResponse>> => {
     return axios.get(`${API_URL}/channels/${uuid}/history`);
+}
+
+
+export const getChannelStats = (uuid: String): Promise<AxiosResponse<StatsResponse>> => {
+    return axios.get(`${API_URL}/channels/${uuid}/stats`);
 }

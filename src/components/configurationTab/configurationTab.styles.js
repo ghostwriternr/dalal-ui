@@ -25,6 +25,7 @@ export const TargetContainer = styled.div`
 export const TargetUrlContainer = styled.div`
     min-width: 150px;
     text-align: left;
+    font-weight: bold;
 `;
 
 export const SaveButtonContainer = styled.div`
