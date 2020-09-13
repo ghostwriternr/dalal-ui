@@ -15,7 +15,7 @@ import { TargetUrlContainer } from "../configurationTab/configurationTab.styles"
 export const ChannelPage = () => {
     let { uuid } = useParams<{ uuid: string }>();
     const { TabPane } = Tabs;
-    const webhookUrl = `https://dalal.com/${uuid}/webhook`;
+    const webhookUrl = `${API_URL}/channels/${uuid}/webhook`;
     return (
         <ChannelPageContainer>
             <ChannelHeaderContainer>
@@ -27,7 +27,7 @@ export const ChannelPage = () => {
             <ChannelContentContainer>
                 <WebhookUrlContainer>
                     <TargetUrlContainer>Webhook Proxy Url</TargetUrlContainer>
-                    <Input placeholder="Web Proxy Url" value={`${API_URL}/${uuid}/webhook`} />
+                    <Input placeholder="Web Proxy Url" value={webhookUrl} />
                     <Button onClick={() => {
                         copy(webhookUrl);
                         sendNotification({
