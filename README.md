@@ -4,6 +4,8 @@
 
 This project is the UI interaction for Dalal
 
+[Backend Repo](https://github.com/ghostwriternr/dalal)
+
 ![alt text](src/assets/logo.png "Logo")
 
 Dalal helps you in connecting multiple systems to one another with just few lines of code.
