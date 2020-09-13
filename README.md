@@ -8,7 +8,7 @@
     <br/>
     <b>The BYOL* Payload Transormation Service</b>
     <br /><br />
-    <a href="https://master.d2r6jsqlksznst.amplifyapp.com/"><strong>Try it out »</strong></a>
+    <a href="https://www.usedalal.com"><strong>Try it out »</strong></a>
     <br /><br />
     <a href="https://github.com/ghostwriternr/dalal-ui/issues">Report Bug</a>
     ·

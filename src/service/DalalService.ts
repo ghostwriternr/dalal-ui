@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { ChannelResponse } from '../components/configurationTab/configuratiionTab';
 import { HistoryResponse, StatsResponse } from '../types';
-export const API_URL = "http://dalal-alb-1007022302.ap-south-1.elb.amazonaws.com";
+export const API_URL = "https://api.usedalal.com";
 
 export const createChannel = () => {
     return axios.post(API_URL + "/channels");
