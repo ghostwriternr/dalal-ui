@@ -9,3 +9,9 @@ export interface History {
 }
 
 export type HistoryResponse = [History]
+
+export interface NotificationType {
+    message: string;
+    duration?: number;
+    placement?: "topRight" | "topLeft" | "bottomLeft" | "bottomRight";
+}

@@ -14,3 +14,15 @@ export const PanelHeaderTextContainer = styled.div`
     width: 50vw;
     text-align: center;
 `;
+
+export const EmptyHistoryContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const EmptyHistoryTextContainer = styled.div`
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+`;

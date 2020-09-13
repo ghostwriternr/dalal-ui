@@ -1,11 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Input, Tabs, Button, notification } from "antd";
+import { Input, Tabs, Button } from "antd";
 import ConfigurationTab from "../configurationTab/configuratiionTab";
-import { ChannelPageContainer, WebhookUrlContainer } from "./ChannelPage.styles";
+import { ChannelPageContainer, WebhookUrlContainer, TaglineContainer } from "./ChannelPage.styles";
 import { CopyOutlined } from "@ant-design/icons";
 import copy from 'copy-to-clipboard';
 import HistoryTab from "../historyTab/historyTab";
+import { sendNotification } from "../../helpers/utils";
+import StatisticsTab from "../statisticsTab/StatisticsTab";
+import { API_URL } from '../../service/DalalService';
 
 export const ChannelPage = () => {
     let { uuid } = useParams<{ uuid: string }>();
@@ -13,15 +16,16 @@ export const ChannelPage = () => {
     const webhookUrl = `https://dalal.com/${uuid}/webhook`;
     return (
         <ChannelPageContainer>
-            <h1 style={{ textAlign: "left" }}>Proxy URL</h1>
+            <TaglineContainer>
+                <h1 style={{ margin: "0px" }}>Proxy URL</h1>
+                <p>BYOL* webhook transformation service</p>
+            </TaglineContainer>
             <WebhookUrlContainer>
-                <Input placeholder="Web Proxy Url" value={webhookUrl} />
+                <Input placeholder="Web Proxy Url" value={`${API_URL}/${uuid}/webhook`} />
                 <Button onClick={() => {
                     copy(webhookUrl);
-                    notification.open({
-                        message: "URL copied",
-                        duration: 1,
-                        placement: 'bottomRight'
+                    sendNotification({
+                        message: "URL copied"
                     });
                 }}><CopyOutlined /></Button>
             </WebhookUrlContainer>
@@ -34,7 +38,7 @@ export const ChannelPage = () => {
                         <HistoryTab uuid={uuid} />
                     </TabPane>
                     <TabPane tab="Statistics" key="3">
-                        Content of Tab Pane 3
+                        <StatisticsTab />
                     </TabPane>
                 </Tabs>
             </div>

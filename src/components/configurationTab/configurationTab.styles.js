@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ChannelContainer = styled.div`
-    padding: 10px;
 `;
 
 export const CodeContainer = styled.div`
@@ -16,9 +15,6 @@ export const LanguageContainer = styled.div`
 `;
 
 export const EditorContainer = styled.div`
-    .ace_editor {
-        height: 60vh;
-    }
 `;
 
 export const TargetContainer = styled.div`
@@ -33,5 +29,5 @@ export const TargetUrlContainer = styled.div`
 
 export const SaveButtonContainer = styled.div`
     text-align: right;
-    padding: 5px;
+    padding: 5px 0px 5px 0px;
  `;

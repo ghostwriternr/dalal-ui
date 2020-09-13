@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { ChannelResponse } from '../components/configurationTab/configuratiionTab';
 import { HistoryResponse } from '../types';
-export const API_URL = "https://e45e508b5f9d.ngrok.io";
+export const API_URL = "https://0c2cf70abe34.ngrok.io";
 
 export const createChannel = () => {
     return axios.post(API_URL + "/channels");
