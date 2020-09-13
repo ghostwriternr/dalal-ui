@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StatisticsContainer } from './StatisticsTab.styles';
+import { StatisticsContainer, GraphContainer, GraphHeaderContainer } from './StatisticsTab.styles';
 import { StatType } from '../../types';
 import { getChannelStats } from '../../service/DalalService';
 import { MyResponsiveBar } from '../barChart/BarChart';
@@ -29,7 +29,10 @@ export default function StatisticsTab({ uuid }: { uuid: string }) {
     }, [uuid])
     return (
         <StatisticsContainer>
-            <MyResponsiveBar data={statsArray} />
+            <GraphHeaderContainer>Today's event</GraphHeaderContainer>
+            <GraphContainer>
+                <MyResponsiveBar data={statsArray} />
+            </GraphContainer>
         </StatisticsContainer>
     );
 }
