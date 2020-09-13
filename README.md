@@ -21,6 +21,8 @@ You can also see all the events triggered for the channel in history tab when yo
 
 On the statistics page currently you will the events which were sent in an hour time frame for the current Day. (Improvements coming)
 
+[API documentation](https://documenter.getpostman.com/view/3355451/TVK5eMcp#100481c4-4ab5-4d57-87e3-c64c58b676fe)
+
 ### Technologies Used
 #### Frontend
 - React
@@ -38,7 +40,7 @@ On the statistics page currently you will the events which were sent in an hour 
 
 ## Local Setup
 - clone this repo
-- cd dalal
+- cd dalal-ui
 - yarn install
 - yarn start
 
