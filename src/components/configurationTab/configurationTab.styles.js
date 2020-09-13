@@ -11,11 +11,14 @@ export const CodeContainer = styled.div`
 `;
 
 export const LanguageContainer = styled.div`
-    width: 10vw
+    width: 150px;
+    text-align: left;
 `;
 
 export const EditorContainer = styled.div`
-    width: 80vw;
+    .ace_editor {
+        height: 60vh;
+    }
 `;
 
 export const TargetContainer = styled.div`
@@ -23,6 +26,12 @@ export const TargetContainer = styled.div`
     align-content: space-between;
 `;
 
-export const TargetUrlContainer = styled.p`
-    width: 10vw;
+export const TargetUrlContainer = styled.div`
+    min-width: 150px;
+    text-align: left;
 `;
+
+export const SaveButtonContainer = styled.div`
+    text-align: right;
+    padding: 5px;
+ `;

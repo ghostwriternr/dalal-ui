@@ -8,7 +8,7 @@ import "ace-builds/src-noconflict/theme-tomorrow";
 import "ace-builds/src-noconflict/ext-language_tools";
 import { Input, Dropdown, Menu, Button, Divider } from "antd";
 import { DownOutlined, UserOutlined } from "@ant-design/icons";
-import { CodeContainer, LanguageContainer, EditorContainer, ChannelContainer, TargetContainer, TargetUrlContainer } from "./configurationTab.styles";
+import { CodeContainer, LanguageContainer, EditorContainer, ChannelContainer, TargetContainer, TargetUrlContainer, SaveButtonContainer } from "./configurationTab.styles";
 import { update, getTemplates, getChannel } from '../../service/DalalService';
 interface templateState {
     id: string;
@@ -133,16 +133,20 @@ export default function ConfigurationTab({ uuid }: { uuid: string }) {
                             enableLiveAutocompletion: true,
                             enableSnippets: true,
                         }}
+                        style={{
+                            height: "60vh"
+                        }}
                     />
                 </EditorContainer>
-
             </CodeContainer>
             <Divider />
             <TargetContainer>
                 <TargetUrlContainer>Target URL</TargetUrlContainer>
                 <Input placeholder="https://targetUrl.com" value={target} onChange={handleTargetChange} />
             </TargetContainer>
-            <Button type="primary" onClick={updateChannel}>Save</Button>
+            <SaveButtonContainer>
+                <Button type="primary" onClick={updateChannel}>Save</Button>
+            </SaveButtonContainer>
         </ChannelContainer>
     );
 }
